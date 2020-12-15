@@ -1,0 +1,10 @@
+IDENTIFIER=1
+Text=2
+SEPERATE=3
+Day=4
+Month=5
+Year=6
+End=7
+WHITESPACES=8
+Comment=9
+'Today is: '=2

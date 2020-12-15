@@ -1,0 +1,138 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007fa42376051f, pid=12178, tid=12179
+#
+# JRE version: OpenJDK Runtime Environment (14.0.2+12) (build 14.0.2+12-Ubuntu-120.04)
+# Java VM: OpenJDK 64-Bit Server VM (14.0.2+12-Ubuntu-120.04, mixed mode, sharing, tiered, compressed oops, g1 gc, linux-amd64)
+# Problematic frame:
+# J 266 c2 org.antlr.v4.runtime.BufferedTokenStream.fetch(I)I (89 bytes) @ 0x00007fa42376051f [0x00007fa423760160+0x00000000000003bf]
+#
+# Core dump will be written. Default location: core.12178 (may not exist)
+#
+# If you would like to submit a bug report, please visit:
+#   Unknown
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: main dato_input.txt
+
+Host: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz, 8 cores, 31G, Ubuntu 20.04.1 LTS
+Time: Mon Dec 14 17:35:59 2020 CET elapsed time: 4 seconds (0d 0h 0m 4s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fa434017000):  JavaThread "main" [_thread_in_Java, id=12179, stack(0x00007fa438eb0000,0x00007fa438fb1000)]
+
+Stack: [0x00007fa438eb0000,0x00007fa438fb1000],  sp=0x00007fa438faf760,  free space=1021k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+J 266 c2 org.antlr.v4.runtime.BufferedTokenStream.fetch(I)I (89 bytes) @ 0x00007fa42376051f [0x00007fa423760160+0x00000000000003bf]
+J 277 c2 org.antlr.v4.runtime.Parser.consume()Lorg/antlr/v4/runtime/Token; (214 bytes) @ 0x00007fa423769a94 [0x00007fa423769960+0x0000000000000134]
+J 282% c2 org.antlr.v4.runtime.DefaultErrorStrategy.consumeUntil(Lorg/antlr/v4/runtime/Parser;Lorg/antlr/v4/runtime/misc/IntervalSet;)V (44 bytes) @ 0x00007fa42376c1f0 [0x00007fa42376c120+0x00000000000000d0]
+j  org.antlr.v4.runtime.DefaultErrorStrategy.recover(Lorg/antlr/v4/runtime/Parser;Lorg/antlr/v4/runtime/RecognitionException;)V+96
+j  datoParser.start()LdatoParser$StartContext;+84
+j  main.main([Ljava/lang/String;)V+83
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x7b941c]
+[error occurred during error reporting (printing native stack), id 0xb, SIGSEGV (0xb) at pc=0x00007fa43a6ba4fa]
+
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 2 (SEGV_ACCERR), si_addr: 0x000000076851f000
+
+Register to memory mapping:
+
+RAX=0x0000000603348450 is an oop: org.antlr.v4.runtime.CodePointCharStream$CodePoint8BitCharStream 
+{0x0000000603348450} - klass: 'org/antlr/v4/runtime/CodePointCharStream$CodePoint8BitCharStream'
+RBX=3229620993 is a compressed pointer to object: org.antlr.v4.runtime.dfa.DFAState 
+{0x000000060400d808} - klass: 'org/antlr/v4/runtime/dfa/DFAState'
+RCX=3227947146 is a compressed pointer to object: org.antlr.v4.runtime.CodePointCharStream$CodePoint8BitCharStream 
+{0x0000000603348450} - klass: 'org/antlr/v4/runtime/CodePointCharStream$CodePoint8BitCharStream'
+RDX=3231646239 is a compressed pointer to object: org.antlr.v4.runtime.atn.LexerATNSimulator$SimState 
+{0x0000000604f810f8} - klass: 'org/antlr/v4/runtime/atn/LexerATNSimulator$SimState'
+RSP=0x00007fa438faf760 is pointing into the stack for thread: 0x00007fa434017000
+RBP=1507552 is a compressed pointer to class: 0x0000000800b80700
+org.antlr.v4.runtime.CodePointCharStream$CodePoint8BitCharStream {0x0000000800b80700}
+RSI=0x0000000800b958d0 is a pointer to class: 
+org.antlr.v4.runtime.CommonToken {0x0000000800b958d0}
+RDI=1507552 is a compressed pointer to class: 0x0000000800b80700
+org.antlr.v4.runtime.CodePointCharStream$CodePoint8BitCharStream {0x0000000800b80700}
+R8 =0x000000076851eff8 points into unknown readable memory: 05 00 00 00 00 00 00 00
+R9 =0x000000000000000c is an unknown value
+R10=0x0000000000000005 is an unknown value
+R11=0x000000076851f028 points into unknown readable memory: 00 00 00 00 00 00 00 00
+R12=0x0 is NULL
+R13=0x0000000000000003 is an unknown value
+R14=0x0000000000000001 is an unknown value
+R15=0x00007fa434017000 is a thread
+
+
+Registers:
+RAX=0x0000000603348450, RBX=0x00000000c0801b01, RCX=0x00000000c066908a, RDX=0x00000000c09f021f
+RSP=0x00007fa438faf760, RBP=0x00000000001700e0, RSI=0x0000000800b958d0, RDI=0x00000000001700e0
+R8 =0x000000076851eff8, R9 =0x000000000000000c, R10=0x0000000000000005, R11=0x000000076851f028
+R12=0x0000000000000000, R13=0x0000000000000003, R14=0x0000000000000001, R15=0x00007fa434017000
+RIP=0x00007fa42376051f, EFLAGS=0x0000000000010283, CSGSFS=0x00000053002b0033, ERR=0x0000000000000000
+  TRAPNO=0x0000000000000000
+
+Top of Stack: (sp=0x00007fa438faf760)
+0x00007fa438faf760:   0000000800b958d0 0000000000000001
+0x00007fa438faf770:   0000000603348470 c066908a00000003
+0x00007fa438faf780:   0000000300000000 00000006033484c0
+0x00007fa438faf790:   0000000000000001 c067dde10000000c 
+
+Instructions: (pc=0x00007fa42376051f)
+0x00007fa42376041f:   41 10 41 8b 69 0c 44 3b c5 0f 8d 62 0d 00 00 41
+0x00007fa42376042f:   8b 69 18 45 8b 4c ec 0c 45 3b c1 0f 83 2c 07 00
+0x00007fa42376043f:   00 41 8b 6b 28 85 ed 0f 85 68 09 00 00 45 89 6b
+0x00007fa42376044f:   28 41 83 fd fd 0f 84 7e 0d 00 00 41 83 fd fe 0f
+0x00007fa42376045f:   84 a8 0d 00 00 41 8b 6b 40 85 ed 0f 85 78 09 00
+0x00007fa42376046f:   00 8b ef 89 4c 24 1c 44 89 6c 24 18 48 89 34 24
+0x00007fa42376047f:   44 89 54 24 0c 44 89 74 24 08 45 8b 53 48 44 89
+0x00007fa42376048f:   54 24 20 45 8b 4b 1c 44 89 4c 24 24 45 8b 53 20
+0x00007fa42376049f:   44 89 54 24 30 45 8b 53 24 44 89 54 24 34 45 8b
+0x00007fa4237604af:   4b 18 44 89 4c 24 38 4c 89 5c 24 10 45 8b 53 38
+0x00007fa4237604bf:   44 89 54 24 3c 45 8b 53 3c 41 ff c8 44 89 44 24
+0x00007fa4237604cf:   40 47 8b 44 d4 08 41 81 f8 fb 18 17 00 0f 85 8e
+0x00007fa4237604df:   07 00 00 4d 8b 87 20 01 00 00 4d 8b d8 49 83 c3
+0x00007fa4237604ef:   30 49 c1 e2 03 4c 89 54 24 48 4d 3b 9f 30 01 00
+0x00007fa4237604ff:   00 0f 83 03 05 00 00 4d 89 9f 20 01 00 00 41 0f
+0x00007fa42376050f:   0d 8b c0 00 00 00 4c 8b 96 b8 00 00 00 4d 89 10
+0x00007fa42376051f:   41 c7 40 08 1a 2b 17 00 41 c7 40 0c 00 00 00 00
+0x00007fa42376052f:   49 c7 40 20 00 00 00 00 49 c7 40 28 00 00 00 00
+0x00007fa42376053f:   49 ba 00 00 00 00 ff ff ff ff 4d 89 50 10 4d 89
+0x00007fa42376054f:   50 18 44 8b 54 24 18 45 89 50 0c 44 8b 5c 24 3c
+0x00007fa42376055f:   45 89 58 28 44 8b 54 24 40 45 89 50 24 44 8b 5c
+0x00007fa42376056f:   24 38 45 89 58 20 44 8b 54 24 34 45 89 50 18 44
+0x00007fa42376057f:   8b 5c 24 3c 43 8b 6c dc 0c 45 8b 5c ec 08 41 81
+0x00007fa42376058f:   fb 07 03 17 00 0f 85 b2 0d 00 00 4d 8d 14 ec 41
+0x00007fa42376059f:   8b 6a 14 45 8b 54 ec 08 41 81 fa c9 04 17 00 0f
+0x00007fa4237605af:   85 d4 0d 00 00 44 8b 54 24 30 45 89 50 14 44 8b
+0x00007fa4237605bf:   5c 24 24 45 89 58 10 44 8b 54 24 20 45 85 d2 0f
+0x00007fa4237605cf:   85 6c 0c 00 00 4c 8b 54 24 48 41 0f b6 6a 0c 85
+0x00007fa4237605df:   ed 0f 85 a6 0c 00 00 41 80 7f 30 00 0f 85 83 02
+0x00007fa4237605ef:   00 00 48 8b 5c 24 10 4c 8b d3 4d 8b d8 4d 33 da
+0x00007fa4237605ff:   49 8b c8 48 c1 e9 03 89 4b 40 49 c1 eb 15 4d 85
+0x00007fa42376060f:   db 0f 84 54 02 00 00 49 c1 ea 09 48 bf 00 e0 c8 
+
+
+Stack slot to memory mapping:
+stack at sp + 0 slots: 0x0000000800b958d0 is a pointer to class: 
+org.antlr.v4.runtime.CommonToken {0x0000000800b958d0}
+stack at sp + 1 slots: 0x0000000000000001 is an unknown value
+stack at sp + 2 slots: 0x0000000603348470 is an oop: datoLexer 
+{0x0000000603348470} - klass: 'datoLexer'
+stack at sp + 3 slots: 0xc066908a00000003 is an unknown value
+stack at sp + 4 slots: 0x0000000300000000 is an unknown value
+stack at sp + 5 slots: 0x00000006033484c0 is an oop: org.antlr.v4.runtime.CommonTokenStream 
+{0x00000006033484c0} - klass: 'org/antlr/v4/runtime/CommonTokenStream'
+stack at sp + 6 slots: 0x0000000000000001 is an unknown value
+stack at sp + 7 slots: 0xc067dde10000000c is an unknown value
+
+--------------------------------------------------------------------------------
+[Constant Pool (empty)]
+
+--------------------------------------------------------------------------------
+
+
+------ Timeout during error reporting after 137 s. ------

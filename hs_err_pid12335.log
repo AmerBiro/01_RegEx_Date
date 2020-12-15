@@ -1,0 +1,31 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007fb41e75ead1, pid=12335, tid=12336
+#
+# JRE version: OpenJDK Runtime Environment (14.0.2+12) (build 14.0.2+12-Ubuntu-120.04)
+# Java VM: OpenJDK 64-Bit Server VM (14.0.2+12-Ubuntu-120.04, mixed mode, sharing, tiered, compressed oops, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libc.so.6+0x18ead1]
+[timeout occurred during error reporting in step "printing problematic frame"] after 59 s.
+# Core dump will be written. Default location: core.12335 (may not exist)
+#
+# If you would like to submit a bug report, please visit:
+#   Unknown
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: main dato_input.txt
+
+Host: 
+[timeout occurred during error reporting in step "printing summary machine and OS info"] after 30 s.
+Time: Mon Dec 14 17:38:47 2020 CET elapsed time: 90 seconds (0d 0h 1m 30s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fb418017000):  JavaThread "main" [_thread_in_vm, id=12336, stack(0x00007fb41ce60000,0x00007fb41cf61000)]
+
+Stack: [0x00007fb41ce60000,0x00007fb41cf61000],  sp=0x00007fb41cf5f438,  free space=1021k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libc.so.6+0x18ead1]
